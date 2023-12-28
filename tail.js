@@ -9,8 +9,7 @@ const assertEqual = function(actual, expected) {
 };
 //function to return tail of an array
 const tail = function(arr) {
-  let newArr = [];
-  newArr = arr.slice(1)
+  let newArr = arr.slice(1);
   return newArr;
 };
 //tests of assertEquals on tail function
@@ -18,6 +17,7 @@ const words = ["Yo Yo", "Lighthouse", "Labs"];
 assertEqual(tail(words).length, 2);
 assertEqual(tail(words)[0], "Lighthouse");
 assertEqual(tail(words)[1], "Labs");
+assertEqual(words.length, 3);
 //more tests to confirm tail function
 const moreWords = ["More"];
 const mostWords = [];
