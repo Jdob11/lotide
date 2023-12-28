@@ -15,17 +15,11 @@ const tail = function(arr) {
 };
 //tests of assertEquals on tail function
 const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
-assertEqual(words[0], "Yo Yo");
-assertEqual(words[1], "Lighthouse");
-assertEqual(words[2], "Labs");
-assertEqual(words[1], "Banana");
+assertEqual(tail(words).length, 2);
+assertEqual(tail(words)[0], "Lighthouse");
+assertEqual(tail(words)[1], "Labs");
 //more tests to confirm tail function
 const moreWords = ["More"];
 const mostWords = [];
-console.log(tail(words));
-console.log(tail(moreWords));
-console.log(tail(mostWords));
 assertEqual(tail(moreWords).length, 0);
 assertEqual(tail(mostWords).length, 0);
