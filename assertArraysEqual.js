@@ -12,7 +12,7 @@ const eqArrays = function(arr1, arr2) {
   }
   return true;
 };
-
+//this function compares if two arrays are equal and sends a pass of fail message
 const assertArraysEqual = function(arr1, arr2) {
   let isEqual = eqArrays(arr1, arr2);
   if (isEqual) {
