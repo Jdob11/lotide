@@ -3,14 +3,16 @@ const assertArraysEqual = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     console.log(`🛑🛑🛑 Assertion failed: ${arr1} !== ${arr2}`);
   } else {
-  //loop to compare that individual array elements are the same and break loop if they aren't
+  //loop to compare that individual array elements are the same and break loop and give failed or passed based on result
     for (let i = 0; i < arr1.length; i++) {
       if (arr1[i] !== arr2[i]) {
         console.log(`🛑🛑🛑 Assertion failed: ${arr1} !== ${arr2}`);
         break;
+      } else {
+        console.log(`✅✅✅ Assertion passed: ${arr1} === ${arr2}`);
+        break;
       }
-    }
-    console.log(`✅✅✅ Assertion passed: ${arr1} === ${arr2}`);
+    }   
   }
 };
 
