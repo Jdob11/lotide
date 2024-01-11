@@ -32,13 +32,13 @@ const map = function(array, callback) {
     results.push(callback(item));
   }
   return results;
-}
+};
 
 
 
 const results1 = map(words, word => word[0]);
 const results2 = map(words, word => word);
 const results3 = map(words, word => word[2]);
-assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);
-assertArraysEqual(results2, [ 'ground', 'control', 'to', 'major', 'tom' ]);
-assertArraysEqual(results3, [ 'o', 'n', undefined, 'j', 'm' ]);
+assertArraysEqual(results1, ['g', 'c', 't', 'm', 't']);
+assertArraysEqual(results2, ['ground', 'control', 'to', 'major', 'tom']);
+assertArraysEqual(results3, ['o', 'n', undefined, 'j', 'm']);
