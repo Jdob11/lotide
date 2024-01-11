@@ -24,13 +24,19 @@ const assertArraysEqual = function(actual, expected) {
 
 };
 
+//function that takes a string and returns an object given the index locations of each character
 const letterPositions = function(sentence) {
+  // create an empty object to store results.
   const results = {};
+
   for (let i = 0; i < sentence.length; i++) {
+    // Check if the current character is not a space.
     if (sentence[i] !== ' ') {
+      //if character is already a key, push index
       if (results[sentence[i]]) {
         results[sentence[i]].push(i);
       } else {
+        //if character is not a key, create array and assign current index
         results[sentence[i]] = [i];
       }
     }
@@ -38,8 +44,10 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("hello").h, [0]);
-assertArraysEqual(letterPositions("hello").l, [2, 3]);
-assertArraysEqual(letterPositions("hello").o, [4]);
+let result = letterPositions("hello");
+assertArraysEqual(result.e, [1]);
+assertArraysEqual(result.h, [0]);
+assertArraysEqual(result.l, [2, 3]);
+assertArraysEqual(result.o, [4]);
+
 
