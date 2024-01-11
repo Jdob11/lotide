@@ -32,7 +32,7 @@ const takeUntil = function(array, callback) {
       newArr.push(value);
     } else {
       //break and return newArr if callback value is met
-      break;
+      return newArr;
     }
   }
   //return newArr
