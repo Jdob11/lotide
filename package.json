@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@jdob11/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "A clone of Lodash Javascript library created for educational purposes",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -14,7 +14,9 @@
     "url": "git+https://github.com/Jdob11/lotide.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Jeff Dobson" 
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Jdob11/lotide/issues"
