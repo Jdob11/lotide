@@ -13,18 +13,6 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-/*
-//tests of eqArrays function
-console.log(eqArrays([1, 2, 3], [1, 2, 3]));
-console.log(eqArrays([1, 2, 3], [3, 2, 1]));
-
-console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"]));
-console.log(eqArrays(["1", "2", "3"], ["1", "2", 3]));
-
-console.log(eqArrays([],[1, 2, 3]));
-*/
-
-
 module.exports = eqArrays;
 
 
