@@ -24,21 +24,19 @@ const assertArraysEqual = function(actual, expected) {
 
 };
 
-//function that takes a string and returns an object given the index locations of each character
 const letterPositions = function(sentence) {
-  // create an empty object to store results.
+  //create object to hold results
   const results = {};
-
+  //loops through characters in sentence
   for (let i = 0; i < sentence.length; i++) {
-    // Check if the current character is not a space.
-    if (sentence[i] !== ' ') {
-      //if character is already a key, push index
-      if (results[sentence[i]]) {
-        results[sentence[i]].push(i);
-      } else {
-        //if character is not a key, create array and assign current index
-        results[sentence[i]] = [i];
-      }
+    //create variable for current character of sentence
+    const char = sentence[i];
+    //rule out spaces
+    if (char !== ' ') {
+      //add array for current character to results object if it doesnt exist
+      results[char] = results[char] || [];
+      //push index position to character array
+      results[char].push(i);
     }
   }
   return results;
