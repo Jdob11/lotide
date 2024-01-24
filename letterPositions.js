@@ -27,6 +27,9 @@ const assertArraysEqual = function(actual, expected) {
 const letterPositions = function(sentence) {
   //create object to hold results
   const results = {};
+  if (typeof sentence !== 'string') {
+    throw new Error('Input must be string');
+  }
   //loops through characters in sentence
   for (let i = 0; i < sentence.length; i++) {
     //create variable for current character of sentence
