@@ -24,8 +24,8 @@ const eqArrays = function(arr1, arr2) {
 //a function to compare if two objects are equal
 const eqObjects = function(object1, object2) {
   //assign the keys of each object
-  let keys1 = Object.keys(object1);
-  let keys2 = Object.keys(object2);
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
   //compare if each object has the same number of keys
   if (keys1.length !== keys2.length) {
     return false;
