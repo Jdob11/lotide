@@ -1,4 +1,4 @@
-const eqArrays = function (arr1, arr2) {
+const eqArrays = function(arr1, arr2) {
   //confirming arrays are an equal length
   if (arr1.length !== arr2.length) {
     return false;
@@ -12,7 +12,7 @@ const eqArrays = function (arr1, arr2) {
   return true;
 };
 //this function compares if two arrays are equal and sends a pass of fail message
-const assertArraysEqual = function (arr1, arr2) {
+const assertArraysEqual = function(arr1, arr2) {
   let isEqual = eqArrays(arr1, arr2);
   if (isEqual) {
     console.log(`✅✅✅ Assertion passed: ${arr1} === ${arr2}`);
@@ -22,7 +22,7 @@ const assertArraysEqual = function (arr1, arr2) {
 
 };
 
-const flatten = function (array) {
+const flatten = function(array) {
   let flatArray = [];
   for (let i = 0; i < array.length; i++) {
     if (Array.isArray(array[i])) {
