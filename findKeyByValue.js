@@ -6,8 +6,11 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+//function to search oibject for given value and reutnr key
 const findKeyByValue = function(object, value) {
+  //loop through object keys
   for (let key in object) {
+    //check object value of current key matches the vlaue given to function, return current key
     if (object[key] === value) {
       return key;
     }
