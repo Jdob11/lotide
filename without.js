@@ -27,8 +27,9 @@ const without = function(source, itemsToRemove) {
   const resultArray = [];
 
   for (let i = 0; i < source.length; i++) {
-    if (!itemsToRemove.includes(source[i])) {
-      resultArray.push(source[i]);
+    let currentItem = source[i];
+    if (!itemsToRemove.includes(currentItem)) {
+      resultArray.push(currentItem);
     }
   }
 
