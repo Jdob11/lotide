@@ -42,10 +42,14 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-let result = letterPositions("hello");
-assertArraysEqual(result.e, [1]);
-assertArraysEqual(result.h, [0]);
-assertArraysEqual(result.l, [2, 3]);
-assertArraysEqual(result.o, [4]);
+let result = letterPositions("Hello World!");
+assertArraysEqual(result['H'], [0]);
+assertArraysEqual(result['e'], [1]);
+assertArraysEqual(result['l'], [2, 3, 9]);
+assertArraysEqual(result['o'], [4, 7]);
+assertArraysEqual(result['W'], [6]);
+assertArraysEqual(result['r'], [8]);
+assertArraysEqual(result['d'], [10]);
+assertArraysEqual(result['!'], [11]);
 
 
