@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion passed: ${actual} === ${expected}`);
   } else {
@@ -7,15 +7,11 @@ const assertEqual = function (actual, expected) {
 
 };
 
-const countOnly = function (allItems, itemsToCount) {
+const countOnly = function(allItems, itemsToCount) {
   let results = {};
   for (const item of allItems) {
     if (itemsToCount[item]) {
-      if (!results[item]) {
-        results[item] = 1;
-      } else {
-        results[item] += 1;
-      }
+      results[item] = (results[item] || 0) + 1;
     }
   }
   return results;
