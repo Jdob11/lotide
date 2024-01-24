@@ -26,13 +26,13 @@ const assertArraysEqual = function(arr1, arr2) {
 //this function gives the middle most element or elements of a given array
 const middle = function(arr) {
   const length = arr.length;
-  //returns an empty array if there are less than 2 elements
-  if (length <= 2) {
-    return [];
-  }
   //console logs error message if input is not an array
   if (!Array.isArray(arr)) {
     console.log("Input must be an array.");
+  }
+  //returns an empty array if there are less than 2 elements
+  if (length <= 2) {
+    return [];
   }
   //finds the middle index of an array and rounds to the nearest whole number
   const middleIndex = Math.floor(length / 2);
