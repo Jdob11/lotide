@@ -49,7 +49,10 @@ const assertObjectsEqual = function(actual, expected) {
 
 };
 
-assertObjectsEqual({ name:"jeff", age: 37}, { name:"jeff", age: 37});
+assertObjectsEqual({ name:"jeff", age: 37}, { name:"jeff", age: 37}); // should pass
+assertObjectsEqual({ name:"jeff", age: 37}, { name:"jeff", age: 38}); // should fail
+assertObjectsEqual({ name:"jeff", age: 37, hobbies: ["coding", "reading"]}, { name:"jeff", age: 37, hobbies: ["coding", "reading"]}); // should pass
+assertObjectsEqual({ name:"jeff", age: 37, hobbies: ["coding", "reading"]}, { name:"jeff", age: 37, hobbies: ["coding", "gaming"]}); // should fail
 
 
 
