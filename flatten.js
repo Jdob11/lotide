@@ -26,12 +26,11 @@ const flatten = function (array) {
   let flatArray = [];
   for (let i = 0; i < array.length; i++) {
     if (Array.isArray(array[i])) {
-      for (const num of array[i]) {
-        flatArray.push(num);
-      }
+      flatArray = flatArray.concat(array[i]);
     } else {
       flatArray.push(array[i]);
     }
+    
   }
   return flatArray;
 };
