@@ -12,29 +12,29 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
+//a function to compare if two objects are equal
 const eqObjects = function(object1, object2) {
-  //compare if the objects contain the same number of keys
-  if (Object.keys(object1).length !== Object.keys(object2).length) {
+  //assign the keys of each object
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
+  //compare if each object has the same number of keys
+  if (keys1.length !== keys2.length) {
     return false;
   }
-
-  const keysArray = Object.keys(object1);
-
-  for (const key of keysArray) {
-    //check if objects are arrays
+  //loop the sorted keys in object1
+  for (let key in object1) {
+    //if the value of the current key is an array, run eqArrays on both arrays to compare if they're equal
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
-      //use eqArrays to compare arrays
       if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
     } else {
-      //compare primitive values to each other if not
       if (object1[key] !== object2[key]) {
         return false;
       }
     }
   }
-
+  //return true if none of the other comparisons return false
   return true;
 };
 
