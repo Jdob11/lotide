@@ -28,7 +28,7 @@ const takeUntil = function(array, callback) {
   //create variable for new array
   const newArray = [];
   //loop array items
-  for (let item of array) {
+  for (const item of array) {
     //if item is not equal to callback function, push to new array
     if (!callback(item)) {
       newArray.push(item);
