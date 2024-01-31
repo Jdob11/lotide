@@ -11,6 +11,7 @@ const eqArrays = function(arr1, arr2) {
   }
   return true;
 };
+
 //this function compares if two arrays are equal and sends a pass of fail message
 const assertArraysEqual = function(actual, expected) {
   let isEqual = eqArrays(actual, expected);
@@ -22,27 +23,29 @@ const assertArraysEqual = function(actual, expected) {
 
 };
 
+//function to return new array of given array items until callback function is met
 const takeUntil = function(array, callback) {
-  const newArr = [];
-  //iterate over the elements of the array
-  for (const value of array) {
-    //negative conditional to check in callback value is met
-    if (!callback(value)) {
-      //if not, add to newArr
-      newArr.push(value);
+  //create variable for new array
+  const newArray = []
+  //loop array items
+  for (let item of array) {
+    //if item is not equal to callback function, push to new array
+    if (!callback(item)) {
+      newArray.push(item)
+      //if item is equal to callback, break loop
     } else {
-      //break and return newArr if callback value is met
-      return newArr;
+      break;
     }
   }
-  //return newArr
-  return newArr;
-};
+  return newArray;
+}
 
+//test function with numbers
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
 assertArraysEqual(results1, [ 1, 2, 5, 7, 2 ]);
 
+//test function with strings
 const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 const results2 = takeUntil(data2, x => x === ',');
 assertArraysEqual(results2, [ "I've", 'been', 'to', 'Hollywood' ]);
