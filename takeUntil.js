@@ -26,19 +26,19 @@ const assertArraysEqual = function(actual, expected) {
 //function to return new array of given array items until callback function is met
 const takeUntil = function(array, callback) {
   //create variable for new array
-  const newArray = []
+  const newArray = [];
   //loop array items
   for (let item of array) {
     //if item is not equal to callback function, push to new array
     if (!callback(item)) {
-      newArray.push(item)
+      newArray.push(item);
       //if item is equal to callback, break loop
     } else {
       break;
     }
   }
   return newArray;
-}
+};
 
 //test function with numbers
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
