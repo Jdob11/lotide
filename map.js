@@ -1,4 +1,3 @@
-
 const eqArrays = function(arr1, arr2) {
   //confirming arrays are an equal length
   if (arr1.length !== arr2.length) {
@@ -12,6 +11,7 @@ const eqArrays = function(arr1, arr2) {
   }
   return true;
 };
+
 //this function compares if two arrays are equal and sends a pass of fail message
 const assertArraysEqual = function(actual, expected) {
   let isEqual = eqArrays(actual, expected);
@@ -23,7 +23,6 @@ const assertArraysEqual = function(actual, expected) {
 
 };
 
-
 const words = ["ground", "control", "to", "major", "tom"];
 
 const map = function(array, callback) {
@@ -32,13 +31,11 @@ const map = function(array, callback) {
     results.push(callback(item));
   }
   return results;
-};
-
-
+}
 
 const results1 = map(words, word => word[0]);
-const results2 = map(words, word => word);
+const results2 = map(words, word => word.toUpperCase());
 const results3 = map(words, word => word[2]);
 assertArraysEqual(results1, ['g', 'c', 't', 'm', 't']);
-assertArraysEqual(results2, ['ground', 'control', 'to', 'major', 'tom']);
+assertArraysEqual(results2, ['GROUND', 'CONTROL', 'TO', 'MAJOR', 'TOM']);
 assertArraysEqual(results3, ['o', 'n', undefined, 'j', 'm']);
