@@ -3,7 +3,8 @@ const middle = function(arr) {
   const length = arr.length;
   //console logs error message if input is not an array
   if (!Array.isArray(arr)) {
-    throw new Error("Input must be an array.");
+    console.log('Input must be an array');
+    return;
   }
   //returns an empty array if there are less than 2 elements
   if (length <= 2) {
