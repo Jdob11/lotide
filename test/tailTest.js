@@ -1,37 +1,18 @@
-const assert = require('chai').assert;
-// const assertEqual = require('../assertEqual');
 const tail = require('../tail');
 
-describe("#tail", () => {
+const assertEqual = require('../assertEqual');
 
-  it("returns array of proper length", () => {
-    const words = ["Yo Yo", "Lighthouse", "Labs"];
-    assert.strictEqual(tail(words).length, 2);
-  });
+const words = ["Yo Yo", "Lighthouse", "Labs"];
+tail(words);
+assertEqual(words.length, 3);
 
-  it("returns proper new value at array position 0", () => {
-    const words = ["Yo Yo", "Lighthouse", "Labs"];
-    assert.strictEqual(tail(words)[0], "Lighthouse"); 
-  });
+const result = tail(["Hello", "Lighthouse", "Labs"]);
+assertEqual(result.length, 2); // ensure we get back two elements
+assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
+assertEqual(result[1], "Labs");
 
-  it("returns proper new value at array position 1", () => {
-    const words = ["Yo Yo", "Lighthouse", "Labs"];
-    assert.strictEqual(tail(words)[1], "Labs");
-  });
+const singleElementArray = tail(["Hello"]);
+assertEqual(singleElementArray.length, 0); // ensure we get back zero elements
 
-  it("confirms original array was not mutatued by tail", () => {
-    const words = ["Yo Yo", "Lighthouse", "Labs"];
-    assert.strictEqual(words.length, 3);
-  });
-
-  it("confirms when given one element an empty array is returned", () => {
-    const moreWords = ["More"];
-    assert.deepEqual(tail(moreWords), []);
-  });
-
-  it("confirms when given no elements an empty array is returned", () => {
-    const mostWords = [];
-    assert.deepEqual(tail(mostWords), []);
-  });
-
-});
+const emptyArray = tail([]);
+assertEqual(emptyArray.length, 0); // ensure we get back zero elements
