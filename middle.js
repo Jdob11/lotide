@@ -1,28 +1,3 @@
-const eqArrays = function(arr1, arr2) {
-  //confirming arrays are an equal length
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  //loop to compare that individual array elements are the same
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-//this function compares if two arrays are equal and sends a pass of fail message
-const assertArraysEqual = function(arr1, arr2) {
-  let isEqual = eqArrays(arr1, arr2);
-  if (isEqual) {
-    console.log(`✅✅✅ Assertion passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion failed: ${arr1} !== ${arr2}`);
-  }
-
-};
-
-
 //this function gives the middle most element or elements of a given array
 const middle = function(arr) {
   const length = arr.length;
@@ -45,18 +20,5 @@ const middle = function(arr) {
   }
 };
 
-const arrayTest1 = middle([1, 2, 3, 4, 5]);
-assertArraysEqual(arrayTest1, [3]);
-
-const arrayTest2 = middle([1, 2, 3, 4, 5, 6]);
-assertArraysEqual(arrayTest2, [3, 4]);
-
-const arrayTest3 = middle([1, 2]);
-assertArraysEqual(arrayTest3, []);
-
-const arrayTest4 = middle([]);
-assertArraysEqual(arrayTest4, []);
-
-middle("Banana");
-
+module.exports = middle;
 
