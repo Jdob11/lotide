@@ -33,4 +33,8 @@ describe("#tail", () => {
     assert.deepEqual(tail(mostWords), []);
   });
 
+  it("should throw the error \"Input must be an array.\" if given anything but an array", () => {
+    assert.throws(() => tail("Banana"), Error, "Input must be an array.");
+  })
+
 });

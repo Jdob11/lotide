@@ -22,4 +22,9 @@ describe("#head", () => {
   it("should return undefined when input is []", () => {
     assert.strictEqual(head([]), undefined); 
   });
+
+  it("should throw the error \"Input must be an array.\" if given anything but an array", () => {
+    assert.throws(() => head("Banana"), Error, "Input must be an array.");
+  })
+
 });
