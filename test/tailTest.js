@@ -1,21 +1,21 @@
-const tail = require('../tail');
 const assert = require('chai').assert;
+const _ = require('../index');
 
 describe("#tail", () => {
 
   it("should return array that is one less than given array", () => {
     const words = ["Yo Yo", "Lighthouse", "Labs"];
-    assert.strictEqual(tail(words).length, 2);
+    assert.strictEqual(_.tail(words).length, 2);
   });
 
   it("should return value from index [1] of original array at index[0] of new array", () => {
     const words = ["Yo Yo", "Lighthouse", "Labs"];
-    assert.strictEqual(tail(words)[0], "Lighthouse"); 
+    assert.strictEqual(_.tail(words)[0], "Lighthouse"); 
   });
 
   it("should return value from index [2] of original array at index[1] of new array", () => {
     const words = ["Yo Yo", "Lighthouse", "Labs"];
-    assert.strictEqual(tail(words)[1], "Labs");
+    assert.strictEqual(_.tail(words)[1], "Labs");
   });
 
   it("should not mutate original array", () => {
@@ -25,16 +25,16 @@ describe("#tail", () => {
 
   it("should return an empty array when given single word array", () => {
     const moreWords = ["More"];
-    assert.deepEqual(tail(moreWords), []);
+    assert.deepEqual(_.tail(moreWords), []);
   });
 
   it("should return an empty array when given an empty array", () => {
     const mostWords = [];
-    assert.deepEqual(tail(mostWords), []);
+    assert.deepEqual(_.tail(mostWords), []);
   });
 
   it("should throw the error \"Input must be an array.\" if given anything but an array", () => {
-    assert.throws(() => tail("Banana"), Error, "Input must be an array.");
+    assert.throws(() => _.tail("Banana"), Error, "Input must be an array.");
   })
 
 });

@@ -1,5 +1,5 @@
-const head   = require('./head');
-const tail   = require('./tail');
+const head = require('./head');
+const tail = require('./tail');
 const middle = require('./middle');
 const countLetters = require('./countLetters');
 const countOnly = require('./countOnly');
@@ -13,6 +13,7 @@ const without = require('./without');
 const assertArraysEqual = require('./assertArraysEqual');
 const assertEqual = require('./assertEqual');
 const assertObjectsEqual = require('./assertObjectsEqual');
+const flatten = require('./flatten');
 
 
 module.exports = {
@@ -31,5 +32,5 @@ module.exports = {
   assertArraysEqual,
   assertEqual,
   assertObjectsEqual,
-
+  flatten,
 };
