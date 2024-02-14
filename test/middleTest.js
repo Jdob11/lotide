@@ -1,16 +1,30 @@
+const assert = require('chai').assert;
 const middle = require('../middle');
-const assertArraysEqual = require('../assertArraysEqual');
 
-const arrayTest1 = middle([1, 2, 3, 4, 5]);
-assertArraysEqual(arrayTest1, [3]);
+describe("#middle", () => {
 
-const arrayTest2 = middle([1, 2, 3, 4, 5, 6]);
-assertArraysEqual(arrayTest2, [3, 4]);
+  it("should return middle value when given odd numbered array", () => {
+    assert.deepEqual(middle([1, 2, 3]), [2]);
+  });
 
-const arrayTest3 = middle([1, 2]);
-assertArraysEqual(arrayTest3, []);
+  it("should return two middle values when given an even numbered array", () => {
+    assert.deepEqual(middle([1, 2, 3, 4]), [2, 3]); 
+  });
 
-const arrayTest4 = middle([]);
-assertArraysEqual(arrayTest4, []);
+  it("should return empty array given a single value array", () => {
+    assert.deepEqual(middle([1]), []); 
+  });
 
-// middle("Banana");
+  it("should return an empty array given an empty array", () => {
+    assert.deepEqual(middle([]), []);
+  });
+
+  it("should return an empty array when given a two value array", () => {
+    assert.deepEqual(middle([1, 2]), []);
+  });
+
+  it("should throw the error \"Input must be an array.\" if given anything but an array", () => {
+    assert.throws(() => middle("Banana"), Error, "Input must be an array.");
+  })
+
+});
