@@ -1,22 +1,36 @@
 const tail = require('../tail');
+const assert = require('chai').assert;
 
-const assertEqual = require('../assertEqual');
+describe("#tail", () => {
 
-//ensure tail does not mutate original array
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
+  it("should return array that is one less than given array", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    assert.strictEqual(tail(words).length, 2);
+  });
 
-//Test case: heck the tail of an array with multiple elements
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs");//ensure second element is "Labs"
+  it("should return value from index [1] of original array at index[0] of new array", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    assert.strictEqual(tail(words)[0], "Lighthouse"); 
+  });
 
-// Test case: Check the tail of an array with a single element
-const singleElementArray = tail(["Hello"]);
-assertEqual(singleElementArray.length, 0); // ensure we get back zero elements
+  it("should return value from index [2] of original array at index[1] of new array", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    assert.strictEqual(tail(words)[1], "Labs");
+  });
 
-// Test case: Check the tail of an empty array
-const emptyArray = tail([]);
-assertEqual(emptyArray.length, 0); // ensure we get back zero elements
+  it("should not mutate original array", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    assert.strictEqual(words.length, 3);
+  });
+
+  it("should return an empty array when given single word array", () => {
+    const moreWords = ["More"];
+    assert.deepEqual(tail(moreWords), []);
+  });
+
+  it("should return an empty array when given an empty array", () => {
+    const mostWords = [];
+    assert.deepEqual(tail(mostWords), []);
+  });
+
+});
