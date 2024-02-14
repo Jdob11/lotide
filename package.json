@@ -14,9 +14,7 @@
     "url": "git+https://github.com/Jdob11/lotide.git"
   },
   "keywords": [],
-  "author": {
-    "name": "Jeff Dobson" 
-  },
+  "author": "Jeff Dobson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Jdob11/lotide/issues"

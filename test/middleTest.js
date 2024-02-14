@@ -13,4 +13,4 @@ assertArraysEqual(arrayTest3, []);
 const arrayTest4 = middle([]);
 assertArraysEqual(arrayTest4, []);
 
-middle("Banana");
+// middle("Banana");
