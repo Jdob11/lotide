@@ -1,6 +1,6 @@
 {
   "name": "@jdob11/lotide",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A clone of Lodash Javascript library created for educational purposes",
   "main": "index.js",
   "directories": {
