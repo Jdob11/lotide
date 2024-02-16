@@ -1,15 +1,30 @@
-const eqArrays = require('../eqArrays');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
+const _ = require('../index');
 
-//testing that given equal arrays, returns true
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-//testing that given different arrays, returns false
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
-//testing that given string array returns true
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
-//testing that given a string vs a numbre in otherwise same array returns false
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
-//testing that given a blank array and an array with values returns false
-assertEqual(eqArrays([], [1, 2, 3]), false);
-// testing that given 2 blank arrays returns true
-assertEqual(eqArrays([], []), true);
+describe("#eqArrays", () => {
+
+  it("should return true when comparing two equal number arrays", () => {
+    assert.strictEqual(_.eqArrays([1, 2, 3], [1, 2, 3]), true);
+  });
+
+  it("should return false when comparing two different arrays", () => {
+    assert.strictEqual(_.eqArrays([1, 2, 3], [3, 2, 1]), false);
+  });
+
+  it("should return true when comparing two equal string arrays arrays", () => {
+    assert.strictEqual(_.eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
+  });
+
+  it("should return false when comparing a string vs number in an otherwise equal array", () => {
+    assert.strictEqual(_.eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+  });
+
+  it("should return false when comparing a blank array to a populated array", () => {
+    assert.strictEqual(_.eqArrays([], [1, 2, 3]), false);
+  });
+
+  it("should return true when comparing two blank arrays", () => {
+    assert.strictEqual(_.eqArrays([], []), true);
+  });
+
+});
