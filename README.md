@@ -30,16 +30,17 @@ The following functions are currently implemented:
 * `assertEqual`: function to assert if two given values are equal
 * `assertObjectsEqual`: function to assert that two given objects are equal
 * `countLetters`: function to return the letter count of a given string
-* `countOnly`: function to count occurances of specific items in an object
+* `countOnly`: function to count occurrences of specific items in an object
 * `eqArrays`: function to check if two arrays are equal
 * `eqObjects`: function to check if two objects are equal
 * `findKey`: function to return first value of a given key
 * `findKeyByValue`: function to return a key that matches given value
+* `flatten`: function to return a single array from an array with nested arrays
 * `head`: function to return first value of an array
 * `index`: object containing all functions of this library
 * `letterPositions`: function to return the index position of a given letter
 * `map`: function to return new array with value from each original array item given to callback function
 * `middle`: function to return the middle element or middle most elements of an array
 * `tail`: function to create an array with every element of the original array given less the first
-* `takeUntil`: function to creat a new array sliced from original array to the value given to callback function
+* `takeUntil`: function to create a new array sliced from original array to the value given to callback function
 * `without`: function to return a new array less values given to remove
