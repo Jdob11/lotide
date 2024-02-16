@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const _ = require('../index');
+const {countOnly} = require('../index');
 
 describe("#countOnly", () => {
 
@@ -15,7 +15,7 @@ describe("#countOnly", () => {
     "Joe"
   ];
 
-  const result1 = _.countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+  const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 
   it("should return 1 when input is \"Jason\"", () => {
     assert.strictEqual(result1["Jason"], 1);

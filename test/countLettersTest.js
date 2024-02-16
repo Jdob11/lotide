@@ -1,9 +1,9 @@
 const assert = require('chai').assert;
-const _ = require('../index');
+const {countLetters} = require('../index');
 
 describe("#countLetters", () => {
 
-  const result1 = _.countLetters("lighthouse in the house");
+  const result1 = countLetters("lighthouse in the house");
 
   it("should return 1 when input is \"l\"", () => {
     assert.strictEqual(result1["l"], 1);
